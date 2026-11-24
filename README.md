@@ -1,6 +1,6 @@
 # Gestion de correction
 
-![Version 1.0.0](https://img.shields.io/badge/version-1.0.0-blue)
+![Version 0.0.1](https://img.shields.io/badge/version-0.0.1-blue)
 [![Tests](https://github.com/thecakeisreal/gestion-correction/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/thecakeisreal/gestion-correction/actions/workflows/tests.yml)
 [![AI Generated](https://www.aihonestybadge.com/badges/ai-generated-small.svg)](https://www.aihonestybadge.com)
 
