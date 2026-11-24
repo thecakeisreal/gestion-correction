@@ -1,0 +1,11 @@
+.gradle/
+build/
+*.db
+*.db-shm
+*.db-wal
+.env
+.env.*
+!.env.example
+
+# Rapport d'audit local contenant des informations sensibles.
+/SECURITY-REPORT.md

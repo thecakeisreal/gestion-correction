@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Édition de la grille par critère, niveau commun et bloc descriptif.
+     @author AI -->
+<HBox spacing="10" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.gestioncorrection.ui.GridController">
+    <padding><Insets top="12" bottom="12"/></padding>
+    <VBox spacing="6" minWidth="200" HBox.hgrow="ALWAYS" styleClass="content-card">
+        <Label text="Critères" styleClass="section-title" wrapText="true"/>
+        <ListView fx:id="criteria" VBox.vgrow="ALWAYS"><placeholder><Label text="Aucun élément"/></placeholder></ListView>
+        <FlowPane hgap="6" vgap="6">
+            <Button fx:id="addCriterionButton" text="Ajouter" onAction="#addCriterion"/>
+            <Button fx:id="modifyCriterionButton" text="Modifier" onAction="#modifyCriterion"/>
+        </FlowPane>
+    </VBox>
+    <VBox spacing="6" minWidth="200" HBox.hgrow="ALWAYS" styleClass="content-card">
+        <Label text="Niveaux communs" styleClass="section-title" wrapText="true"/>
+        <ListView fx:id="levels" VBox.vgrow="ALWAYS"><placeholder><Label text="Aucun élément"/></placeholder></ListView>
+        <FlowPane hgap="6" vgap="6">
+            <Button fx:id="addLevelButton" text="Ajouter" onAction="#addLevel"/>
+            <Button fx:id="modifyLevelButton" text="Modifier" onAction="#modifyLevel"/>
+        </FlowPane>
+    </VBox>
+    <VBox spacing="6" minWidth="200" HBox.hgrow="ALWAYS" styleClass="content-card">
+        <Label text="Blocs du critère et du niveau" styleClass="section-title" wrapText="true"/>
+        <ListView fx:id="blocks" VBox.vgrow="ALWAYS"><placeholder><Label text="Aucun élément"/></placeholder></ListView>
+        <FlowPane hgap="6" vgap="6">
+            <Button fx:id="addBlockButton" text="Ajouter" onAction="#addBlock"/>
+            <Button fx:id="modifyBlockButton" text="Modifier" onAction="#modifyBlock"/>
+        </FlowPane>
+    </VBox>
+</HBox>

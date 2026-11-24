@@ -1,0 +1,124 @@
+/**
+ * Thème discret commun à la fenêtre et aux dialogues de l'application.
+ * @author AI
+ */
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 13px;
+    -fx-base: #edf2f7;
+    -fx-background-color: #f5f7fa;
+}
+
+.label {
+    -fx-text-fill: #24354b;
+}
+
+/** Structure visuelle et hiérarchie des titres. */
+.app-header {
+    -fx-padding: 0 0 14 0;
+}
+
+.app-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #193451;
+}
+
+.section-title {
+    -fx-font-weight: bold;
+    -fx-text-fill: #30455f;
+}
+
+.content-card {
+    -fx-padding: 12;
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-border-color: #dce4ec;
+    -fx-border-radius: 8;
+}
+
+.status-bar {
+    -fx-padding: 9 12;
+    -fx-background-color: #e9eff5;
+    -fx-background-radius: 6;
+    -fx-text-fill: #40546b;
+}
+
+/** Boutons, focus clavier et états indisponibles. */
+.button {
+    -fx-background-color: #e9eff6;
+    -fx-background-radius: 5;
+    -fx-border-color: #c8d6e5;
+    -fx-border-radius: 5;
+    -fx-text-fill: #183c5e;
+    -fx-padding: 6 10;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #d9e7f4;
+}
+
+.button:focused, .combo-box:focused, .text-field:focused, .text-area:focused, .list-view:focused {
+    -fx-border-color: #3979b5;
+    -fx-border-width: 1.5;
+}
+
+.button:disabled, .combo-box:disabled, .list-view:disabled, .text-field:disabled {
+    -fx-opacity: 0.55;
+    -fx-cursor: default;
+}
+
+/** Champs de saisie et listes avec mise en évidence de la sélection. */
+.combo-box, .text-field, .text-area, .list-view {
+    -fx-background-color: white;
+    -fx-background-radius: 5;
+    -fx-border-color: #cbd6e2;
+    -fx-border-radius: 5;
+}
+
+.list-cell {
+    -fx-padding: 7 9;
+    -fx-background-color: white;
+    -fx-text-fill: #263b51;
+}
+
+.list-cell:filled:selected {
+    -fx-background-color: #d5e8f8;
+    -fx-text-fill: #123b5f;
+}
+
+.list-cell:filled:hover:!selected {
+    -fx-background-color: #f0f5fa;
+}
+
+/** Onglets de navigation entre grille, copies et correction. */
+.tab-pane > .tab-header-area > .tab-header-background {
+    -fx-background-color: transparent;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab {
+    -fx-background-color: #e5ecf3;
+    -fx-background-radius: 6 6 0 0;
+    -fx-padding: 7 14;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab:selected {
+    -fx-background-color: #d3e6f5;
+}
+
+.tab .tab-label {
+    -fx-text-fill: #29445f;
+    -fx-font-weight: bold;
+}
+
+/** Fond des dialogues et indications de validation. */
+.dialog-pane {
+    -fx-background-color: #f5f7fa;
+}
+
+.validation-hint {
+    -fx-padding: 3 10 5 10;
+    -fx-text-fill: #51667b;
+    -fx-font-size: 12px;
+}

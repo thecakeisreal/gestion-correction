@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.GridPane?>
+
+<!-- Saisie et sélection des dossiers associés à une évaluation.
+     @author AI -->
+<GridPane hgap="8" vgap="8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.gestioncorrection.ui.DirectoryDialog">
+    <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+    <Label text="Copies" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+    <TextField fx:id="source" prefWidth="420" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+    <Button fx:id="chooseSourceButton" text="Parcourir…" onAction="#chooseSource" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+    <Label text="Exports DOCX" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <TextField fx:id="destination" prefWidth="420" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+    <Button text="Parcourir…" onAction="#chooseDestination" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+    <Label fx:id="pathsHint" styleClass="validation-hint" wrapText="true" GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.columnSpan="3"/>
+</GridPane>

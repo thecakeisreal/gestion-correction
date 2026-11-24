@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Correction d'une copie : sélection des blocs et commentaires, notes manuelles et export.
+     @author AI -->
+<VBox spacing="8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.gestioncorrection.ui.GradingController">
+    <padding><Insets top="12" bottom="12"/></padding>
+    <HBox spacing="8">
+        <Label text="Copie à corriger :" styleClass="section-title"/>
+        <ComboBox fx:id="gradingCopy" promptText="Sélectionnez une copie" prefWidth="450"/>
+    </HBox>
+    <HBox spacing="10" VBox.vgrow="ALWAYS">
+        <VBox spacing="6" minWidth="200" HBox.hgrow="ALWAYS" styleClass="content-card">
+            <Label text="Critères de la copie sélectionnée" styleClass="section-title" wrapText="true"/>
+            <ListView fx:id="gradingCriteria" VBox.vgrow="ALWAYS"><placeholder><Label text="Aucun élément"/></placeholder></ListView>
+        </VBox>
+        <VBox spacing="6" minWidth="200" HBox.hgrow="ALWAYS" styleClass="content-card">
+            <Label text="Blocs — [X] : sélectionné" styleClass="section-title" wrapText="true"/>
+            <ListView fx:id="gradingBlocks" VBox.vgrow="ALWAYS"><placeholder><Label text="Aucun élément"/></placeholder></ListView>
+            <FlowPane hgap="6" vgap="6"><Button fx:id="selectBlockButton" text="Sélectionner le bloc" onAction="#selectBlock"/></FlowPane>
+        </VBox>
+        <VBox spacing="6" minWidth="200" HBox.hgrow="ALWAYS" styleClass="content-card">
+            <Label text="Commentaires du bloc — [X] : sélectionné" styleClass="section-title" wrapText="true"/>
+            <ListView fx:id="comments" VBox.vgrow="ALWAYS"><placeholder><Label text="Aucun élément"/></placeholder></ListView>
+            <FlowPane hgap="6" vgap="6">
+                <Button fx:id="addCommentButton" text="Créer" onAction="#addComment"/>
+                <Button fx:id="editCommentButton" text="Modifier le modèle" onAction="#editComment"/>
+                <Button fx:id="toggleCommentButton" text="Activer / retirer" onAction="#toggleComment"/>
+                <Button fx:id="overrideCommentButton" text="Personnaliser la perte" onAction="#overrideComment"/>
+            </FlowPane>
+        </VBox>
+        <VBox spacing="6" minWidth="200" HBox.hgrow="ALWAYS" styleClass="content-card">
+            <Label text="Points manuels" styleClass="section-title" wrapText="true"/>
+            <ListView fx:id="scores" VBox.vgrow="ALWAYS"><placeholder><Label text="Aucun élément"/></placeholder></ListView>
+            <FlowPane hgap="6" vgap="6">
+                <Button fx:id="setScoreButton" text="Saisir les points" onAction="#setScore"/>
+                <Button fx:id="exportCopyButton" text="Exporter cette copie" onAction="#exportCopy"/>
+                <Button fx:id="exportAllButton" text="Exporter toutes les copies" onAction="#exportAll"/>
+            </FlowPane>
+            <Label fx:id="exportHint" styleClass="validation-hint" wrapText="true"
+                   text="Pour exporter, configurez le dossier et renseignez des noms et prénoms valides et distincts."/>
+        </VBox>
+    </HBox>
+</VBox>

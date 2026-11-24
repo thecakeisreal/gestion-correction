@@ -1,0 +1,26 @@
+In this folder create a java project with a javafx interface, using gradlew for compilation task. The interface is in french. Use SQLite database to store temp data.
+
+The project helps in correction it should have the following functionnality :
+
+Organise correction task by session, then course, then evaluation
+All evaluation might be link to a folder where the copies are, and a folder where the correction grid are exported.
+
+There must be an option to anonymise and reverse the anonymisation of the copies. If a directory as the name of a student, then the directory is renamed. 
+
+There must also be a system to unnest move files. E.g. student project often comes in 3 or 4 nested folder, each containg only one subfolder. It must be flatten to one only folder. 
+
+A correction grid can be created for each evaluation. The correction grid has the following structure
+
+- Region (optionnal)
+- Critère d'évaluation
+- Indicateur
+- Pondération
+- Niveaux de perfomance
+
+For each niveau de performance, there is a descriptive text that can be set. Descriptive text can have multiple blocks. Niveau de performance have a non overlapping range of notes. The notes can be assigned by region of critère d'évaluation.  
+
+For each copy, it must be possible to apply the grid by selecting the appropriate block. It should not automatically calculate point à this stage.
+
+When applying, it is also possible to select a comment. A comment may have a point loss associated. Each comment can be save and be selected again for other copy in the same block. Their point loss are common. It can be override, but it must be done explicitly
+
+During execution, everything is store in local database. At the end of the process, individual grid are exported to a supplied path different for each evaluation. Grid must be name after student (name, first name) and be in docx format. It must include the grid, the selected block, the point for each region, and the comment (including point loss for each selected comment)

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Fenêtre principale et vues incluses ; les sélections hiérarchiques pilotent les onglets.
+     @author AI -->
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.gestioncorrection.ui.MainController" stylesheets="@application.css">
+    <padding><Insets top="16" right="16" bottom="12" left="16"/></padding>
+    <top>
+        <VBox spacing="9" styleClass="app-header">
+            <Label text="Organisation : session → cours → évaluation" styleClass="app-title"/>
+            <FlowPane hgap="6" vgap="6">
+                <ComboBox fx:id="sessions" promptText="Session" prefWidth="160"/>
+                <Button fx:id="addSessionButton" text="Ajouter une session" onAction="#addSession"/>
+                <ComboBox fx:id="courses" promptText="Cours" prefWidth="160"/>
+                <Button fx:id="addCourseButton" text="Ajouter un cours" onAction="#addCourse"/>
+                <ComboBox fx:id="evaluations" promptText="Évaluation" prefWidth="180"/>
+                <Button fx:id="addEvaluationButton" text="Ajouter une évaluation" onAction="#addEvaluation"/>
+                <Button fx:id="editPathsButton" text="Dossiers" onAction="#editPaths"/>
+            </FlowPane>
+        </VBox>
+    </top>
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Grille"><content><fx:include fx:id="gridView" source="grid-view.fxml"/></content></Tab>
+                <Tab text="Copies"><content><fx:include fx:id="copiesView" source="copies-view.fxml"/></content></Tab>
+                <Tab text="Correction et export"><content><fx:include fx:id="gradingView" source="grading-view.fxml"/></content></Tab>
+            </tabs>
+        </TabPane>
+    </center>
+    <bottom><Label fx:id="status" styleClass="status-bar" maxWidth="Infinity" text="Sélectionnez ou créez une évaluation."/></bottom>
+</BorderPane>

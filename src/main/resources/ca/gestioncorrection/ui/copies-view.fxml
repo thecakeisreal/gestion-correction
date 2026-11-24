@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Liste des copies et opérations explicites sur leurs dossiers.
+     @author AI -->
+<HBox spacing="10" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.gestioncorrection.ui.CopiesController">
+    <padding><Insets top="12" bottom="12"/></padding>
+    <VBox spacing="6" minWidth="200" HBox.hgrow="ALWAYS" styleClass="content-card">
+        <Label text="Copies — sélectionnez une copie pour la correction" styleClass="section-title" wrapText="true"/>
+        <ListView fx:id="copies" VBox.vgrow="ALWAYS"><placeholder><Label text="Aucun élément"/></placeholder></ListView>
+        <FlowPane hgap="6" vgap="6">
+            <Button fx:id="scanButton" text="Importer les dossiers" onAction="#scan"/>
+            <Button fx:id="editStudentButton" text="Associer nom et prénom" onAction="#editStudent"/>
+            <Button fx:id="anonymiseButton" text="Anonymiser" onAction="#anonymise"/>
+            <Button fx:id="deanonymiseButton" text="Désanonymiser" onAction="#deanonymise"/>
+            <Button fx:id="anonymiseAllButton" text="Tout anonymiser" onAction="#anonymiseAll"/>
+            <Button fx:id="deanonymiseAllButton" text="Tout désanonymiser" onAction="#deanonymiseAll"/>
+            <Button fx:id="flattenButton" text="Aperçu et aplatir" onAction="#flatten"/>
+        </FlowPane>
+        <Label fx:id="sourceHint" styleClass="validation-hint" wrapText="true"
+               text="Sélectionnez une évaluation puis configurez le dossier des copies dans Dossiers."/>
+    </VBox>
+</HBox>
