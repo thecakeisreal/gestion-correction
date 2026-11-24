@@ -1,0 +1,27 @@
+# Exécute les tests après une mise à jour de la branche principale.
+# @author AI
+name: Tests
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Récupérer le projet
+        uses: actions/checkout@v6
+
+      - name: Installer Java 21
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      # Xvfb fournit un affichage virtuel aux tests JavaFX.
+      - name: Exécuter les tests
+        run: xvfb-run -a bash ./gradlew test uiTest --no-daemon
