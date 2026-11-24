@@ -2,6 +2,7 @@
 
 ![Version 1.0.0](https://img.shields.io/badge/version-1.0.0-blue)
 [![Tests](https://github.com/thecakeisreal/gestion-correction/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/thecakeisreal/gestion-correction/actions/workflows/tests.yml)
+[![AI Generated](https://www.aihonestybadge.com/badges/ai-generated-small.svg)](https://www.aihonestybadge.com)
 
 Application de correction en français pour organiser les évaluations, anonymiser les copies, utiliser des grilles de correction et exporter les résultats en DOCX.
 
